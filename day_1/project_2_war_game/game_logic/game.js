@@ -1,10 +1,10 @@
 import { compare_cards, create_deck, shuffle } from "../utils/deck.js";
 
-function create_player(name = "AI") {
+export function create_player(name = "AI") {
   return { name, hand: [], won_pile: [] };
 }
 
-function init_game() {
+export function init_game() {
   const player_1 = create_player("daniel");
   const player_2_AI = create_player();
   const card = create_deck();
@@ -15,7 +15,7 @@ function init_game() {
   return { shuffle_cards, player_1, player_2_AI };
 }
 
-function play_round(player_1, player_2_AI) {
+export function play_round(player_1, player_2_AI) {
   let card_player_1 = player_1.hand.pop();
   let card_player_2_AI = player_2_AI.hand.pop();
   const temp = compare_cards(card_player_1, card_player_2_AI);

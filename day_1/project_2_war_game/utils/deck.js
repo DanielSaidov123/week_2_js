@@ -30,4 +30,20 @@ function create_deck() {
      return arr_cards
 }
 
-function shuffle(deck) {}
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function shuffle(deck) {
+    for (let i = 0; i <1000 ; i++) {
+        let index_i=randomInt(1,51)
+        let index_2=randomInt(1,51)
+        if(index_i==index_2){continue }
+        else{[deck[index_i],deck[index_2]]=[deck[index_2],deck[index_i]]}
+     }
+     return deck
+}
+
+
+

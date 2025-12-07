@@ -9,3 +9,8 @@ function create_Task(name, details, status) {
     Date:new Date()
   };
 }
+
+function create_arr_Tasks( ){
+    return []
+ } 
+ 

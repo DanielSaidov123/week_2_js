@@ -33,8 +33,20 @@ function init() {
       print_all_Tasks(arr_of_Tasks);
     }
     if (inp == "4") {
-      const key_object = input("enter key for sorted: ");
-      console.log(sort_arr_Task(key_object));
+      let keys = "";
+      let revers = false;
+      console.log(`1. Normal sort by date
+2. reversed sorting by date
+3. sorting by status`);
+      const key = input("enter key for sorted: ");
+      if (key == "1") {
+        keys = "Date";
+      } else if (key == "2") {
+        (keys = "Date"), (revers = true);
+      } else if (key == "3") {
+        keys = "status";
+      }
+      sort_arr_Task(arr_of_Tasks, keys, revers);
     }
   } while (inp !== "5");
 }

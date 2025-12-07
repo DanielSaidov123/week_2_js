@@ -1,4 +1,4 @@
- import { nanoid } from "nanoid";
+import { nanoid } from "nanoid";
 
 export function create_Task(name, details, status) {
   return {
@@ -6,7 +6,7 @@ export function create_Task(name, details, status) {
     name,
     details,
     status,
-    Date:new Date()
+    Date: new Date(),
   };
 }
 
@@ -39,14 +39,26 @@ export function print_all_Tasks(arr_Tasks) {
   });
 }
 
+export function sort_arr_Task(arr_object, key, reverse = false) {
+  if (!Array.isArray(arr_object)) return;
 
-export function sort_arr_Task(key,arr_object){
-  if(typeof arr_object.key[key] != 'object'){
-  return DBprogram.sort((a, b) => a[key].charCodeAt(0) - b[key].charCodeAt(0));
-  }
-  else {
-    return DBprogram.sort((a, b) => a[key][0].charCodeAt(0) - b[key][0].charCodeAt(0));
-  }
+  arr_object.sort((a, b) => {
+    let result = 0;
+
+    if (typeof a[key] === "string" && typeof b[key] === "string") {
+      result = a[key].localeCompare(b[key]);
+    } else if (typeof a[key] === "number" && typeof b[key] === "number") {
+      result = a[key] - b[key];
+    } else if (a[key] instanceof Date && b[key] instanceof Date) {
+      result = a[key] - b[key];
+    }
+
+    if (reverse) {
+      return -result;
+    } else {
+      return result;
+    }
+  });
+
+  console.log(arr_object);
 }
-
-

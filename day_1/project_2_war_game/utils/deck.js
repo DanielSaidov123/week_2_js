@@ -1,5 +1,5 @@
 
-function create_card(rank, suite) {
+export function create_card(rank, suite) {
     let value=0
     if(rank=='J'){value=11}
     else if(rank=='Q'){value=12 }
@@ -10,13 +10,13 @@ function create_card(rank, suite) {
 
 }
 
-function compare_cards(p1_card, p2_card) {
+export function compare_cards(p1_card, p2_card) {
     if(p1_card.value>p2_card.value){return 'p1' }
     else if(p2_card.value>p1_card.value){return 'p2' }
     else{return 'WAR'}
 }
 
-function create_deck() {
+export function create_deck() {
     const arr_cards=[]
     const arr_1=['H', 'C', 'D', 'S']
     const arr_2=['2','3','4','5','6','7','8','9','10','J','Q','K','A']
@@ -35,7 +35,7 @@ function randomInt(min, max) {
 }
 
 
-function shuffle(deck) {
+export function shuffle(deck) {
     for (let i = 0; i <1000 ; i++) {
         let index_i=randomInt(1,51)
         let index_2=randomInt(1,51)

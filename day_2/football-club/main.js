@@ -32,12 +32,12 @@ console.log(`Total Goals: ${getTotalGoals()}`);
 // Example tests:
 
 // Test findPlayerById
-// const player = findPlayerById(3);
-// console.log('\n🔍 Found Player:', player);
+const player = findPlayerById(3);
+console.log('\n🔍 Found Player:', player);
 
 // Test getPlayersByPosition
-// const forwards = getPlayersByPosition('Forward');
-// console.log('\n⚡ Forwards:', forwards);
+const forwards = getPlayersByPosition('Forward');
+console.log('\n⚡ Forwards:', forwards);
 
 // Test addPlayer
 const newPlayer = addPlayer({

@@ -23,10 +23,26 @@ function FillsABoard(row,col,bord,player){
 
 
  function IfIsWin(bord){
-  for (let i = 0; i <3 ; i++) {
-    for (let j = 0; j <3 ; j++) {
-      
 
+  for (let i = 0; i <6 ; i++) {
+    let count_X=0
+    let count_O=0
+    for (let j = 0; j <3 ; j++) {
+        if(bord[j][j]==X){
+          count_X
+        }
+        else if(bord[j][j]){
+          count_O+=1
+         }
+              
+
+     }
+    if(count_O==3){
+      console.log('O IS WIN');
+      
+    }
+    else if(count_X==3){
+      console.log('X IS WIN');
      }
    }
 
